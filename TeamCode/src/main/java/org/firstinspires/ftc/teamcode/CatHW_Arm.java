@@ -6,13 +6,13 @@ import com.qualcomm.robotcore.util.ElapsedTime;
 
 public class CatHW_Arm extends CatHW_Subsystem {
 
-    ElapsedTime runTime = new ElapsedTime();
-    double      timeout = 0;
+    //private ElapsedTime   runTime = new ElapsedTime();
+    //private double        timeout = 0;
 
     public DcMotor armMotor = null;
     public DcMotor intake  = null;
 
-    LinearOpMode opMode = null;
+    //private LinearOpMode opMode = null;
 
     public CatHW_Arm(CatHW_Async mainHardware) { super(mainHardware); }
 
@@ -38,29 +38,26 @@ public class CatHW_Arm extends CatHW_Subsystem {
         armMotor.setPower(0);
         intake.setPower(0);
 
-
-
-
     }
 
-    public void intakeRings(double power){
+    public void intakeRings(double power) {
         intake.setPower(power);
 
     }
 
-    public void stopIntake(){
+    public void stopIntake() {
         intake.setPower(0);
 
     }
 
-    public void raiseArm(double time){
+    public void raiseArm(double time) {
         armMotor.setPower(0.6);
         robotWait(time);
         armMotor.setPower(0);
     }
 
 
-    public void lowerArm(double time){
+    public void lowerArm(double time) {
         armMotor.setPower(-0.6);
         robotWait(time);
         armMotor.setPower(0);
@@ -70,7 +67,7 @@ public class CatHW_Arm extends CatHW_Subsystem {
         ElapsedTime delayTimer = new ElapsedTime();
         while (delayTimer.seconds() < seconds) {
             //while (opMode.opModeIsActive()  &&  (delayTimer.seconds() < seconds)) {
-        //    opMode.idle();
+            //opMode.idle();
         }
     }
 
